@@ -1,0 +1,51 @@
+SHELL=/bin/bash -l
+
+30 03 * * * /u/binbin.zhou/clean_tmp.sh 1>/u/binbin.zhou/clean_tmp.log 2>&1
+00 06 * * * /u/binbin.zhou/clean_files_on_rzdm.sh 1>/u/binbin.zhou/clean_files_on_rzdm.log 2>&1
+00 22 * * * /u/binbin.zhou/scp_data_to_prod_machine.sh 1>/u/binbin.zhou/scp_data_to_prod_machine.log 2>&1
+00 14 * * * /u/binbin.zhou/cp_href_prod_stats.sh 1>/u/binbin.zhou/cp_href_parrallel_stats.out 2>&1
+
+#00 20 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/send_narre.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/out.send_narre 2>&1
+#10 20 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/send_sref.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/out.send_sref 2>&1
+#20 20 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/send_href.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/out.send_href 2>&1
+20 21 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/send_rrfsens.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/out.send_rrfsens 2>&1
+20 22 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/send_refs.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/web/out.send_refs 2>&1
+
+00 12 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/EVS/rrfsens/run_all_load_rrfsen_data.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/EVS/rrfsens/output.run_all_load_rrfsen_data 2>&1
+
+30 12 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/run_all_RRFSens_mbr_batch.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/output.run_all_RRFSens_mbr_batch.sh 2>&1
+
+15 13 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/run_all_RRFSens_relib_batch.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/output.run_all_RRFSens_relib_batch.sh 2>&1
+
+15 14 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/run_all_RRFSens_relp_batch.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/output.run_all_RRFSens_relp_batch.sh 2>&1
+
+15 20 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/run_all_RRFSens_rhist_batch.sh 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/AWS_MetV/batch/output.run_all_RRFSens_rhist_batch.sh 2>&1
+
+#30 01 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/prep/global_ens/submit_prep.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/prep/global_ens/submit_prep.output 2>&1
+
+#00 07 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/global_ens/submit_gens_for_day_all.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/global_ens/submit_gens_for_day_all.out 2>&1
+
+#20 08 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/narre/submit_narre_job.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/narre/run_narre_job.output 2>&1
+
+#30 08 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/mesoscale/submit_sref_jobs.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/mesoscale/run_sref_jobs.output 2>&1
+
+#30 08 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/mesoscale/submit_single_jobs.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/mesoscale/run_single_jobs.output 2>&1
+
+
+#30 04 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/submit_href_jobs.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/run_href_jobs.output 2>&1
+
+30 05 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/submit_rrfsens_jobs.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/run_rrfsens_jobs.output 2>&1
+
+30 03 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/submit_refs_jobs.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/stats/cam/run_refs_jobs.output 2>&1
+
+00 13 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_refs_plots.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_refs_plots.output 2>&1
+
+#30 12 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/global_ens/submit_all_plots.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/global_ens/submit_all_plots.output 2>&1
+
+
+#00 15 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/narre/submit_all_plots.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/narre/submit_all_plots.output 2>&1
+
+#30 16 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_plots.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_plots.output 2>&100 15 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_rrfsens_plots.cron 1> /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/cam/submit_all_rrfsens_plots.output 2>&1
+
+#30 13 * * * /lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/mesoscale/submit_all_plots.cron 1>/lfs/h2/emc/vpppg/noscrub/binbin.zhou/EVS/dev/drivers/scripts/plots/mesoscale/submit_all_plots.output 2>&1
+
